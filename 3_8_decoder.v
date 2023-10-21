@@ -4,7 +4,6 @@ module DECODER(d0, d1, d2, d3, d4, d5, d6, d7, x, y, z);
     output d0, d1, d2, d3, d4, d5, d6, d7;
 
     wire nx, ny, nz;
-
     not (nx, x);
     not (ny, y);
     not (nz, z);
