@@ -1,0 +1,122 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x130e043d0 .scope module, "Testing" "Testing" 2 28;
+ .timescale 0 0;
+v0x60000273c240_0 .var "clk", 0 0;
+v0x60000273c2d0_0 .var "d", 0 0;
+v0x60000273c360_0 .net "q", 0 0, v0x60000273c1b0_0;  1 drivers
+v0x60000273c3f0_0 .var "rst", 0 0;
+S_0x130e04900 .scope module, "dff" "dff_sync_clear" 2 31, 2 1 0, S_0x130e043d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clearb";
+    .port_info 2 /INPUT 1 "clock";
+    .port_info 3 /OUTPUT 1 "q";
+v0x60000273c000_0 .net "clearb", 0 0, v0x60000273c3f0_0;  1 drivers
+v0x60000273c090_0 .net "clock", 0 0, v0x60000273c240_0;  1 drivers
+v0x60000273c120_0 .net "d", 0 0, v0x60000273c2d0_0;  1 drivers
+v0x60000273c1b0_0 .var "q", 0 0;
+E_0x6000000398c0 .event posedge, v0x60000273c090_0;
+S_0x130e04790 .scope module, "dff_async_clear" "dff_async_clear" 2 15;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "d";
+    .port_info 1 /INPUT 1 "clearb";
+    .port_info 2 /INPUT 1 "clock";
+    .port_info 3 /OUTPUT 1 "q";
+o0x148030190 .functor BUFZ 1, C4<z>; HiZ drive
+v0x60000273c480_0 .net "clearb", 0 0, o0x148030190;  0 drivers
+o0x1480301c0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x60000273c510_0 .net "clock", 0 0, o0x1480301c0;  0 drivers
+o0x1480301f0 .functor BUFZ 1, C4<z>; HiZ drive
+v0x60000273c5a0_0 .net "d", 0 0, o0x1480301f0;  0 drivers
+v0x60000273c630_0 .var "q", 0 0;
+E_0x600000039900/0 .event negedge, v0x60000273c480_0;
+E_0x600000039900/1 .event posedge, v0x60000273c510_0;
+E_0x600000039900 .event/or E_0x600000039900/0, E_0x600000039900/1;
+    .scope S_0x130e04900;
+T_0 ;
+    %wait E_0x6000000398c0;
+    %load/vec4 v0x60000273c000_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x60000273c1b0_0, 0;
+    %jmp T_0.1;
+T_0.0 ;
+    %load/vec4 v0x60000273c120_0;
+    %assign/vec4 v0x60000273c1b0_0, 0;
+T_0.1 ;
+    %jmp T_0;
+    .thread T_0;
+    .scope S_0x130e043d0;
+T_1 ;
+    %wait E_0x6000000398c0;
+    %vpi_call 2 35 "$display", " ", $time, " d=%b, clk=%b, rst=%b, q=%b\012", v0x60000273c2d0_0, v0x60000273c240_0, v0x60000273c3f0_0, v0x60000273c360_0 {0 0 0};
+    %jmp T_1;
+    .thread T_1;
+    .scope S_0x130e043d0;
+T_2 ;
+T_2.0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c240_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000273c240_0, 0, 1;
+    %delay 5, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c240_0, 0, 1;
+    %jmp T_2.0;
+    %end;
+    .thread T_2;
+    .scope S_0x130e043d0;
+T_3 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c2d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000273c3f0_0, 0, 1;
+    %delay 4, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000273c2d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c3f0_0, 0, 1;
+    %delay 50, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000273c2d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x60000273c3f0_0, 0, 1;
+    %delay 20, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c2d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x60000273c3f0_0, 0, 1;
+    %end;
+    .thread T_3;
+    .scope S_0x130e04790;
+T_4 ;
+    %wait E_0x600000039900;
+    %load/vec4 v0x60000273c480_0;
+    %nor/r;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_4.0, 8;
+    %pushi/vec4 0, 0, 1;
+    %assign/vec4 v0x60000273c630_0, 0;
+    %jmp T_4.1;
+T_4.0 ;
+    %load/vec4 v0x60000273c5a0_0;
+    %assign/vec4 v0x60000273c630_0, 0;
+T_4.1 ;
+    %jmp T_4;
+    .thread T_4;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "dff.v";
