@@ -35,14 +35,14 @@ module sync_counter_4bit(clock, reset, q);
 
     input clock, reset;
     output [3:0] q;
-    reg [3:0] q;
-    reg [3:0] qn;
+    wire [3:0] q;
+    wire [3:0] qn;
     wire and1, and2;
 
-    initial begin
-        q = 4'b000;
-        qn = 4'b1111;
-    end
+    // initial begin
+    //     q = 4'b0000;
+    //     qn = 4'b1111;
+    // end
 
 
     jk_ff ff0(1'b1, 1'b1, clock, reset, q[0], qn[0]);
@@ -50,7 +50,7 @@ module sync_counter_4bit(clock, reset, q);
 
     assign and1 = q[0] & q[1];
 
-    jk_ff ff2(and1, and2, clock, reset, q[2], q[2]);
+    jk_ff ff2(and1, and1, clock, reset, q[2], q[2]);
 
     assign and2 = q[2] & and1;
 
@@ -64,13 +64,19 @@ module testbench;
     reg reset;
     wire [3:0] Q;
 
-    sync_counter_4bit sync(clock, reset, q);
+    sync_counter_4bit sync(clock, reset, Q);
 
     initial clock = 0;
 
     always
         #2 clock = ~clock;
-    
-    initial
-        $monitor($time, "")
+
+    always @(posedge clock)
+        $display($time, " Q=%b, clk=%b", Q, clock);
+
+    initial begin
+        reset = 1;
+        #1 reset = 0;
+        #50 $finish;
+    end
 endmodule

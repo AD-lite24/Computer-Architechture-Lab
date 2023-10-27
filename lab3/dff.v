@@ -9,7 +9,6 @@ module dff_sync_clear(d, clearb, clock, q);
         if (!clearb) q <= 1'b0;
         else q <= d;
     end
-
 endmodule
 
 module dff_async_clear(d, clearb, clock, q);
