@@ -1,0 +1,375 @@
+$date
+	Sun Nov 12 14:29:35 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module DESIGN $end
+$var wire 1 ! clock $end
+$var wire 4 " count [3:0] $end
+$var wire 4 # count_wire [3:0] $end
+$var wire 8 $ data [7:0] $end
+$var wire 1 % detected_parity $end
+$var wire 1 & match $end
+$var wire 1 ' reset $end
+$var wire 1 ( store_parity $end
+$var wire 1 ) store_parity_wire $end
+$var wire 1 * match_wire $end
+$var wire 1 + detected_parity_wire $end
+$var wire 8 , data_wire [7:0] $end
+$scope module checker $end
+$var wire 1 ) parity $end
+$var wire 8 - data [7:0] $end
+$var reg 1 + detect $end
+$var reg 1 * result $end
+$upscope $end
+$scope module counter $end
+$var wire 4 . Q_count [3:0] $end
+$var wire 1 ! clock $end
+$var wire 1 ' reset $end
+$var wire 4 / qn [3:0] $end
+$var wire 4 0 q [3:0] $end
+$var wire 1 1 out $end
+$scope module ff0 $end
+$var wire 1 2 D $end
+$var wire 1 ! clock $end
+$var wire 1 ' reset $end
+$var wire 1 3 Qn $end
+$var wire 1 4 Q $end
+$scope module ff $end
+$var wire 1 5 R $end
+$var wire 1 2 S $end
+$var wire 1 ! clock $end
+$var wire 1 ' reset $end
+$var reg 1 4 Q $end
+$var reg 1 3 Qn $end
+$upscope $end
+$upscope $end
+$scope module ff1 $end
+$var wire 1 6 D $end
+$var wire 1 7 clock $end
+$var wire 1 ' reset $end
+$var wire 1 8 Qn $end
+$var wire 1 9 Q $end
+$scope module ff $end
+$var wire 1 : R $end
+$var wire 1 6 S $end
+$var wire 1 7 clock $end
+$var wire 1 ' reset $end
+$var reg 1 9 Q $end
+$var reg 1 8 Qn $end
+$upscope $end
+$upscope $end
+$scope module ff2 $end
+$var wire 1 ; D $end
+$var wire 1 < clock $end
+$var wire 1 ' reset $end
+$var wire 1 = Qn $end
+$var wire 1 > Q $end
+$scope module ff $end
+$var wire 1 ? R $end
+$var wire 1 ; S $end
+$var wire 1 < clock $end
+$var wire 1 ' reset $end
+$var reg 1 > Q $end
+$var reg 1 = Qn $end
+$upscope $end
+$upscope $end
+$scope module ff3 $end
+$var wire 1 @ D $end
+$var wire 1 A clock $end
+$var wire 1 ' reset $end
+$var wire 1 B Qn $end
+$var wire 1 C Q $end
+$scope module ff $end
+$var wire 1 D R $end
+$var wire 1 @ S $end
+$var wire 1 A clock $end
+$var wire 1 ' reset $end
+$var reg 1 C Q $end
+$var reg 1 B Qn $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module fetchdata $end
+$var wire 4 E Q_count [3:0] $end
+$var wire 1 F sel $end
+$var wire 1 G parity2 $end
+$var wire 1 H parity1 $end
+$var wire 1 ) parity $end
+$var wire 8 I data [7:0] $end
+$var wire 8 J bank2_out [7:0] $end
+$var wire 8 K bank1_out [7:0] $end
+$var wire 3 L address [2:0] $end
+$scope module mem1 $end
+$var wire 3 M address [2:0] $end
+$var reg 8 N data [7:0] $end
+$var reg 1 H parity $end
+$upscope $end
+$scope module mem2 $end
+$var wire 3 O address [2:0] $end
+$var reg 8 P data [7:0] $end
+$var reg 1 G parity $end
+$upscope $end
+$scope module mux_data $end
+$var wire 8 Q in0 [7:0] $end
+$var wire 8 R in1 [7:0] $end
+$var wire 1 F sel $end
+$var wire 8 S out [7:0] $end
+$scope begin genblk1[0] $end
+$var parameter 2 T i $end
+$scope module mux $end
+$var wire 1 U in0 $end
+$var wire 1 V in1 $end
+$var wire 1 F sel $end
+$var wire 1 W out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[1] $end
+$var parameter 2 X i $end
+$scope module mux $end
+$var wire 1 Y in0 $end
+$var wire 1 Z in1 $end
+$var wire 1 F sel $end
+$var wire 1 [ out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[2] $end
+$var parameter 3 \ i $end
+$scope module mux $end
+$var wire 1 ] in0 $end
+$var wire 1 ^ in1 $end
+$var wire 1 F sel $end
+$var wire 1 _ out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[3] $end
+$var parameter 3 ` i $end
+$scope module mux $end
+$var wire 1 a in0 $end
+$var wire 1 b in1 $end
+$var wire 1 F sel $end
+$var wire 1 c out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[4] $end
+$var parameter 4 d i $end
+$scope module mux $end
+$var wire 1 e in0 $end
+$var wire 1 f in1 $end
+$var wire 1 F sel $end
+$var wire 1 g out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[5] $end
+$var parameter 4 h i $end
+$scope module mux $end
+$var wire 1 i in0 $end
+$var wire 1 j in1 $end
+$var wire 1 F sel $end
+$var wire 1 k out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[6] $end
+$var parameter 4 l i $end
+$scope module mux $end
+$var wire 1 m in0 $end
+$var wire 1 n in1 $end
+$var wire 1 F sel $end
+$var wire 1 o out $end
+$upscope $end
+$upscope $end
+$scope begin genblk1[7] $end
+$var parameter 4 p i $end
+$scope module mux $end
+$var wire 1 q in0 $end
+$var wire 1 r in1 $end
+$var wire 1 F sel $end
+$var wire 1 s out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module mux_parity $end
+$var wire 1 H in0 $end
+$var wire 1 G in1 $end
+$var wire 1 F sel $end
+$var wire 1 ) out $end
+$upscope $end
+$upscope $end
+$upscope $end
+$scope module testbench $end
+$var wire 4 t count [3:0] $end
+$var wire 8 u data [7:0] $end
+$var wire 1 v detected_parity $end
+$var wire 1 w match $end
+$var wire 1 x store_parity $end
+$var reg 1 y clock $end
+$var reg 1 z reset $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b111 p
+b110 l
+b101 h
+b100 d
+b11 `
+b10 \
+b1 X
+b0 T
+$end
+#0
+$dumpvars
+1z
+0y
+zx
+zw
+zv
+bz u
+bz t
+xs
+xr
+xq
+xo
+xn
+xm
+xk
+xj
+xi
+xg
+xf
+xe
+xc
+xb
+xa
+x_
+x^
+x]
+x[
+xZ
+xY
+xW
+xV
+xU
+bx S
+bx R
+bx Q
+bx P
+bz O
+bx N
+bz M
+bz L
+bx K
+bx J
+bx I
+xH
+xG
+zF
+bz E
+xD
+xC
+xB
+xA
+x@
+x?
+x>
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+x3
+x2
+x1
+bx 0
+bx /
+bz .
+bx -
+bx ,
+x+
+x*
+x)
+x(
+z'
+x&
+x%
+bx $
+bz #
+bz "
+z!
+$end
+#1
+0z
+1y
+#2
+0y
+#3
+1y
+#4
+0y
+#5
+1y
+#6
+0y
+#7
+1y
+#8
+0y
+#9
+1y
+#10
+0y
+#11
+1y
+#12
+0y
+#13
+1y
+#14
+0y
+#15
+1y
+#16
+0y
+#17
+1y
+#18
+0y
+#19
+1y
+#20
+0y
+#21
+1y
+#22
+0y
+#23
+1y
+#24
+0y
+#25
+1y
+#26
+0y
+#27
+1y
+#28
+0y
+#29
+1y
+#30
+0y
+#31
+1y
+#32
+0y
+#33
+1y
